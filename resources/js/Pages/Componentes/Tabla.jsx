@@ -10,7 +10,7 @@ export default function Resultados({ alumnos }) {
 
   return (
     <>
-      <Head title="Tabla" />
+      <Head title="Tabla" />    
       <Table striped bordered hover>
         <thead>
           <tr>
