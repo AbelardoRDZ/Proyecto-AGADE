@@ -1,18 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/inertia-react';
+import { Head } from '@inertiajs/inertia-react'
 import Accordion from 'react-bootstrap/Accordion';
 
-export default function Home(props) {
+function Home({ auth}) {
+
     return (
-        <AuthenticatedLayout
-            auth={props.auth}
-            errors={props.errors}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
-        >
+        <AuthenticatedLayout auth={auth}>
             <Head title="Home" />
-            
+
             <div style={{ textAlign: "center" }}>Estas en el Home</div>
 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 'auto' }}>
@@ -27,7 +24,8 @@ export default function Home(props) {
 
                 </Accordion>
             </div >
-
         </AuthenticatedLayout>
+
     );
 }
+export default Home;

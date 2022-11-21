@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -23,78 +24,15 @@ import {
     MDBModalFooter,
 } from 'mdb-react-ui-kit';
 
-function Convocatorias() {
+function Convocatorias({ auth }) {
 
     const [basicModal, setBasicModal] = useState(false);
     const toggleShow = () => setBasicModal(!basicModal);
     return (
-        <>
+        <AuthenticatedLayout auth={auth}>
             <Head title='Convocatorias' />
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="home">SCADE</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="home">Home</Nav.Link>
-                        <Nav.Link href="Perfil">Perfil</Nav.Link>
-                        <Nav.Link href="Convocatorias">Convocatorias</Nav.Link>
-                        <Nav.Link href="Resultados">Resultados</Nav.Link>
-                        <Nav.Link href="EquiposFutbol">EquiposFutbol</Nav.Link>
-                        <Nav.Link href="EquiposVoly">EquiposVoly</Nav.Link>
-                        <Nav.Link href="EquiposBaseball">EquiposBaseball</Nav.Link>
 
-                    </Nav>
-                </Container>
-            </Navbar>
-
-            {[false].map((expand) => (
-                <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-                    <Container fluid>
-                        <Navbar.Brand href="Home">Sistema de control interno para actividades deportivas TEC Valles</Navbar.Brand>
-                        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-                        <Navbar.Offcanvas
-                            id={`offcanvasNavbar-expand-${expand}`}
-                            aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-                            placement="end"
-                        >
-                            <Offcanvas.Header closeButton>
-                                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                                    SCADE
-                                </Offcanvas.Title>
-                            </Offcanvas.Header>
-                            <Offcanvas.Body>
-                                <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Nav.Link href="Home">Home</Nav.Link>
-                                    <Nav.Link href="Perfil">Perfil</Nav.Link>
-                                    <Nav.Link href="Convocatorias">Convocatorias</Nav.Link>
-
-                                    <NavDropdown title="Resultados" id={`offcanvasNavbarDropdown-expand-${expand}`}>
-                                        <NavDropdown.Item href="Resultados">Futbol</NavDropdown.Item>
-                                        <NavDropdown.Item href="Resultados">Voly</NavDropdown.Item>
-                                        <NavDropdown.Item href="Resultados">Baseball</NavDropdown.Item>
-                                        <NavDropdown.Divider />
-
-                                        <NavDropdown.Item href="#action5">
-                                            Something else here
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
-
-                                </Nav>
-                                <Form className="d-flex">
-                                    <Form.Control
-                                        type="search"
-                                        placeholder="Search"
-                                        className="me-2"
-                                        aria-label="Search"
-                                    />
-                                    <Button variant="outline-success">Search</Button>
-                                </Form>
-                            </Offcanvas.Body>
-                        </Navbar.Offcanvas>
-                    </Container>
-                </Navbar>
-            ))}
-
-            <div>Estas en las convocatorias</div>
+            <div style={{ textAlign: "center" }}>Estas Convocatorias</div>
 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '425px' }}>
                 <Card style={{ width: '18rem', marginLeft: '0.8rem' }}>
@@ -187,7 +125,7 @@ function Convocatorias() {
                     </Card.Body>
                 </Card>
             </div>
-        </>
+        </AuthenticatedLayout>
     );
 }
 

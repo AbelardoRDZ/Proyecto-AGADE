@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Alumno extends Model
 {
     public $timestamps = false;
+
     use HasFactory;
 
-    protected $table = "posts";
-
-    protected $hidden = ['id'];
-
+    protected $alumnos = "alumnos";
+    
     public function obtenerAlumnos()
     {
         return Alumno::all();

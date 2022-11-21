@@ -18,6 +18,11 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function futbol(){
+        return $this->hasMany(RegistroFutbol::class);
+    }
+    
+
     protected $fillable = [
         'name',
         'email',

@@ -5,7 +5,7 @@ import PrimaryButton from '@/Components/PrimaryButton'
 import { useForm, Head } from '@inertiajs/inertia-react'
 import Post from '@/Components/Post';
 
-function Prueba({ auth, posts }) {
+function RegistroBaseball({ auth, posts }) {
     
     const { data, setData, post, processing, reset, errors } = useForm({
         title: '',
@@ -60,9 +60,10 @@ function Prueba({ auth, posts }) {
                             <Post key={post.id} post={post} />
                         )}
                 </div>
+                
             </div>
         </AuthenticatedLayout>
     )
 }
 
-export default Prueba;
+export default RegistroBaseball;

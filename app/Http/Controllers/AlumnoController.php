@@ -3,21 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use App\Models\Post;
+
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class AlumnoController extends Controller
 {
     protected $alumnos;
-    public function __construct(Alumno $alumnos)
+    
+    public function __construct(Alumno $alumnos, Post $nombres)
     {
         $this->alumnos = $alumnos;
+        $this->nombres = $nombres;
     }
 
     public function index()
     {
         $alumnos = $this->alumnos->obtenerAlumnos();
-        return Inertia::render('Componentes/Tabla', ['alumnos' => $alumnos]);
+        $nombres = $this->nombres->obtenerNombres();
+        
+        return Inertia::render('Componentes/Tabla', ['alumnos' => $alumnos, 'nombres' => $nombres]);
     }
 
     /**

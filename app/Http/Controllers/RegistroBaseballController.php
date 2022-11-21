@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Home;
-use App\Models\Post;
-
+use App\Models\RegistroBaseball;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Post;
 
-class HomeController extends Controller
+class RegistroBaseballController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return Inertia::render('Componentes/Home');
-        return Inertia::render('Componentes/Home', [
+        return Inertia::render('Componentes/RegistroBaseball', [
             'posts' => Post::with('user:id,name')->latest()->get()
         ]);
     }
@@ -47,10 +45,10 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\RegistroBaseball  $registroBaseball
      * @return \Illuminate\Http\Response
      */
-    public function show(Home $home)
+    public function show(RegistroBaseball $registroBaseball)
     {
         //
     }
@@ -58,10 +56,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\RegistroBaseball  $registroBaseball
      * @return \Illuminate\Http\Response
      */
-    public function edit(Home $home)
+    public function edit(RegistroBaseball $registroBaseball)
     {
         //
     }
@@ -70,10 +68,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\RegistroBaseball  $registroBaseball
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Home $home)
+    public function update(Request $request, RegistroBaseball $registroBaseball)
     {
         //
     }
@@ -81,10 +79,10 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Home  $home
+     * @param  \App\Models\RegistroBaseball  $registroBaseball
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Home $home)
+    public function destroy(RegistroBaseball $registroBaseball)
     {
         //
     }

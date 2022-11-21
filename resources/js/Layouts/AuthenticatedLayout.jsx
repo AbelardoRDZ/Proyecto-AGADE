@@ -22,14 +22,12 @@ export default function Authenticated({ auth, header, children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
+                                    Home
                                 </NavLink>
                                 <NavLink href={route('posts.index')} active={route().current('posts.index')}>
                                     Posts
                                 </NavLink>
-                                <NavLink href={route('home.index')} active={route().current('home.index')}>
-                                    Home
-                                </NavLink>
+                                
                                 <NavLink href={route('tabla.index')} active={route().current('tabla.index')}>
                                     Tabla
                                 </NavLink>
@@ -38,6 +36,15 @@ export default function Authenticated({ auth, header, children }) {
                                 </NavLink>
                                 <NavLink href={route('perfil.index')} active={route().current('perfil.index')}>
                                     Perfil
+                                </NavLink>
+                                <NavLink href={route('registroFutbol.index')} active={route().current('registroFutbol.index')}>
+                                    Registro Futbol
+                                </NavLink>
+                                <NavLink href={route('registroVoly.index')} active={route().current('registroVoly.index')}>
+                                    Registro Voly
+                                </NavLink>
+                                <NavLink href={route('registroBaseball.index')} active={route().current('registroBaseball.index')}>
+                                    Registro Base ball
                                 </NavLink>
                                 
                                 
@@ -109,14 +116,12 @@ export default function Authenticated({ auth, header, children }) {
                 <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-                            Dashboard
+                            Home
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('posts.index')} active={route().current('posts.index')}>
                             Posts
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('home.index')} active={route().current('home.index')}>
-                            Home
-                        </ResponsiveNavLink>
+                        
                         <ResponsiveNavLink href={route('tabla.index')} active={route().current('tabla.index')}>
                             Tabla
                         </ResponsiveNavLink>
@@ -125,6 +130,15 @@ export default function Authenticated({ auth, header, children }) {
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('perfil.index')} active={route().current('perfil.index')}>
                             Perfil
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('registroFutbol.index')} active={route().current('registroFutbol.index')}>
+                            Registro Futbol
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('registroVoly.index')} active={route().current('registroVoly.index')}>
+                            Registro Voly
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('registroBaseball.index')} active={route().current('registroBaseball.index')}>
+                            Registro Baseball
                         </ResponsiveNavLink>
                         
                     </div>

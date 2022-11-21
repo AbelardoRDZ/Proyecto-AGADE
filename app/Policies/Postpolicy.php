@@ -32,7 +32,8 @@ class Postpolicy
 
     public function delete(User $user, Post $post)
     {
-        //
+        //return $post->user()->is($user);
+        return $this->update($user, $post);
     }
 
     public function restore(User $user, Post $post)

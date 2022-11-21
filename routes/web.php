@@ -8,6 +8,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ConvocatoriasController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\RegistroFutbolController;
+
 
 
 /*
@@ -21,18 +23,17 @@ use App\Http\Controllers\PerfilController;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::resource('registroBaseball', RegistroFutbolController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('registroVoly', RegistroFutbolController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
+
+Route::resource('registroFutbol', RegistroFutbolController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
 
 Route::resource('perfil', PerfilController::class)
 ->only(['index'])
@@ -54,4 +55,16 @@ Route::resource('posts', PostController::class)
 ->only(['index', 'store', 'update', 'destroy'])
 ->middleware(['auth']);
 
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 require __DIR__.'/auth.php';
