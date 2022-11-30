@@ -37,15 +37,7 @@ export default function Authenticated({ auth, header, children }) {
                                 <NavLink href={route('perfil.index')} active={route().current('perfil.index')}>
                                     Perfil
                                 </NavLink>
-                                <NavLink href={route('registroFutbol.index')} active={route().current('registroFutbol.index')}>
-                                    Registro Futbol
-                                </NavLink>
-                                <NavLink href={route('registroVoly.index')} active={route().current('registroVoly.index')}>
-                                    Registro Voly
-                                </NavLink>
-                                <NavLink href={route('registroBaseball.index')} active={route().current('registroBaseball.index')}>
-                                    Registro Base ball
-                                </NavLink>
+                                
                                 
                                 
                             </div>
@@ -131,15 +123,8 @@ export default function Authenticated({ auth, header, children }) {
                         <ResponsiveNavLink href={route('perfil.index')} active={route().current('perfil.index')}>
                             Perfil
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('registroFutbol.index')} active={route().current('registroFutbol.index')}>
-                            Registro Futbol
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('registroVoly.index')} active={route().current('registroVoly.index')}>
-                            Registro Voly
-                        </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('registroBaseball.index')} active={route().current('registroBaseball.index')}>
-                            Registro Baseball
-                        </ResponsiveNavLink>
+                        
+                        
                         
                     </div>
 

@@ -60,6 +60,7 @@ function Prueba({ auth, posts }) {
                             <Post key={post.id} post={post} />
                         )}
                 </div>
+                
             </div>
         </AuthenticatedLayout>
     )

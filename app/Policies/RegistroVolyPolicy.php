@@ -27,13 +27,13 @@ class RegistroVolyPolicy
 
     public function update(User $user, RegistroVoly $registroVoly)
     {
-        return $registroVoly->user()->is($user);
+        //return $registroVoly->user()->is($user);
     }
 
     public function delete(User $user, RegistroVoly $registroVoly)
     {
         //return $post->user()->is($user);
-        return $this->update($user, $registroVoly);
+        //return $this->update($user, $registroVoly);
     }
 
     public function restore(User $user, RegistroVoly $registroVoly)

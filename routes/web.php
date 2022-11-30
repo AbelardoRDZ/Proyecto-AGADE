@@ -9,6 +9,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ConvocatoriasController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\RegistroFutbolController;
+use App\Http\Controllers\RegistroVolyController;
+use App\Http\Controllers\RegistroBaseballController;
+use App\Http\Controllers\UnirfutbolController;
+use App\Http\Controllers\UnirvolyController;
+use App\Http\Controllers\UnirbaseBallController;
 
 
 
@@ -23,11 +28,27 @@ use App\Http\Controllers\RegistroFutbolController;
 |
 */
 
-Route::resource('registroBaseball', RegistroFutbolController::class)
+Route::resource('jugador', JuagdorController::class)
 ->only(['index', 'store', 'update', 'destroy'])
 ->middleware(['auth', 'verified']);
 
-Route::resource('registroVoly', RegistroFutbolController::class)
+Route::resource('UnirbaseBall', UnirbaseBallController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
+
+Route::resource('Unirvoly', UnirvolyController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
+
+Route::resource('Unirfutbol', UnirfutbolController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
+
+Route::resource('registroBaseball', RegistroBaseballController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
+
+Route::resource('registroVoly', RegistroVolyController::class)
 ->only(['index', 'store', 'update', 'destroy'])
 ->middleware(['auth', 'verified']);
 

@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Http\Controllers\PostController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -20,6 +19,26 @@ class User extends Authenticatable
 
     public function futbol(){
         return $this->hasMany(RegistroFutbol::class);
+    }
+
+    public function voly(){
+        return $this->hasMany(RegistroVoly::class);
+    }
+
+    public function baseBall(){
+        return $this->hasMany(RegistroBaseball::class);
+    }
+    public function unirfutbol(){
+        return $this->hasMany(Unirfutbol::class);
+    }
+    public function unirvoly(){
+        return $this->hasMany(Unirvoly::class);
+    }
+    public function unirbaseball(){
+        return $this->hasMany(UnirbaseBall::class);
+    }
+    public function jugadores(){
+        return $this->hasMany(Jugador::class);
     }
     
 

@@ -5,22 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RegistroFutbol extends Model
+class Unirfutbol extends Model
 {
     use HasFactory;
 
-    protected $equiposFutbol = "registro_Futbols";
-    
+    protected $equiposBaseball = "unirfutbols";
+
     public function obtenerData()
     {
-        return RegistroFutbol::all();
+        return Unirfutbol::all();
     }
 
     public function user(){
         return $this->belongsTo(User::class);
     }
     protected $fillable = [
-        'nombre',
+        'jugador',
+        'equipo',
         'creador'
     ];
 }

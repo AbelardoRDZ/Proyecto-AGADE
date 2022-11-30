@@ -27,13 +27,13 @@ class RegistroBaseballPolicy
 
     public function update(User $user, RegistroBaseball $registroBaseball)
     {
-        return $registroBaseball->user()->is($user);
+        //return $registroBaseball->user()->is($user);
     }
 
     public function delete(User $user, RegistroBaseball $registroBaseball)
     {
         //return $post->user()->is($user);
-        return $this->update($user, $registroBaseball);
+        //return $this->update($user, $registroBaseball);
     }
 
     public function restore(User $user, RegistroBaseball $registroBaseball)

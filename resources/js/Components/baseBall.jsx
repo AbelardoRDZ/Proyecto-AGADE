@@ -9,18 +9,18 @@ import { useForm, usePage } from '@inertiajs/inertia-react'
 
 dayjs.extend(relativeTime)
 
-function Post({ post }) {
+function BaseBall({ baseBall }) {
 
     const { auth } = usePage().props
     const [editing, setEditing] = useState(false)
     const { data, setData, patch, processing, reset, errors } = useForm({
-        title: post.title,
-        body: post.body
+        nombre: baseBall.nombre,
+        creador: baseBall.creador
     })
 
     const submit = (e) => {
         e.preventDefault()
-        patch(route('posts.update', post.id), { onSuccess: () => setEditing(false) })
+        patch(route('registroBaseball.update', baseBall.id), { onSuccess: () => setEditing(false) })
     }
 
     return (
@@ -32,11 +32,11 @@ function Post({ post }) {
             <div className='flex-1'>
                 <div className='flex justify-between items-center'>
                     <div>
-                        <span className="text-white">{post.user.name}</span>
-                        <small className="ml-2 text-sm text-white">{dayjs(post.created_at).fromNow()}</small>
-                        {post.created_at !== post.updated_at && <small className='text-sm text-gray-600'>&middot; edited</small>}
+                        <span className="text-white">{baseBall.user.name}</span>
+                        <small className="ml-2 text-sm text-white">{dayjs(baseBall.created_at).fromNow()}</small>
+                        {baseBall.created_at !== baseBall.updated_at && <small className='text-sm text-gray-600'>&middot; edited</small>}
                     </div>
-                    {post.user.id === auth.user.id &&
+                    {"abelardo" === auth.user.name &&
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <button>
@@ -54,7 +54,7 @@ function Post({ post }) {
                                 </button>
                                 <Dropdown.Link
                                     as="button"
-                                    href={route('posts.destroy', post.id)}
+                                    href={route('registroBaseball.destroy', baseBall.id)}
                                     method='delete'
                                 >
                                     Delete
@@ -66,15 +66,15 @@ function Post({ post }) {
                 {editing
                     ? <form onSubmit={submit}>
                         <input
-                            value={data.title}
-                            onChange={e => setData('title', e.target.value)}
+                            value={data.creador}
+                            onChange={e => setData('creador', e.target.value)}
                             type="text"
                             className='mb-3 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm'
                             autoFocus
                         />
                         <textarea
-                            value={data.body}
-                            onChange={e => setData('body', e.target.value)}
+                            value={data.nombre}
+                            onChange={e => setData('nombre', e.target.value)}
                             className='mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm'
                         >
                         </textarea>
@@ -95,8 +95,8 @@ function Post({ post }) {
                     </form>
                     : (
                         <>
-                            <p className="mt-4 text-lg text-white">{post.title}</p>
-                            <p className="mt-4 text-white">{post.body}</p>
+                            <p className="mt-4 text-lg text-white">creador: {baseBall.creador}</p>
+                            <p className="mt-4 text-white">equipo: {baseBall.nombre}</p>
                         </>
                     )
                 }
@@ -106,4 +106,4 @@ function Post({ post }) {
     );
 }
 
-export default Post;
+export default BaseBall;

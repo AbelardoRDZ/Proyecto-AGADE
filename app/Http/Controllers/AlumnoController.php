@@ -2,28 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alumno;
-use App\Models\Post;
-
-use Illuminate\Http\Request;
 use Inertia\Inertia;
+use App\Models\Alumno;
+use App\Models\RegistroBaseball;
+use App\Models\RegistroFutbol;
+use App\Models\RegistroVoly;
+use App\Models\UnirbaseBall;
+use App\Models\Unirfutbol;
+use App\Models\Unirvoly;
+use Illuminate\Http\Request;
+
+
 
 class AlumnoController extends Controller
 {
     protected $alumnos;
     
-    public function __construct(Alumno $alumnos, Post $nombres)
+    public function __construct(RegistroFutbol $futbol, RegistroVoly $voly, RegistroBaseball $baseball, 
+                                Unirfutbol $unirfutbol, Unirvoly $unirvoly, UnirbaseBall $unirbaseBall)
     {
-        $this->alumnos = $alumnos;
-        $this->nombres = $nombres;
+        $this->futbol = $futbol;
+        $this->voly = $voly;
+        $this->baseball = $baseball;
+        $this->unirfutbol = $unirfutbol;
+        $this->unirvoly = $unirvoly;
+        $this->unirbaseBall = $unirbaseBall;
     }
 
     public function index()
     {
-        $alumnos = $this->alumnos->obtenerAlumnos();
-        $nombres = $this->nombres->obtenerNombres();
+        $futbol = $this->futbol->obtenerData();
+        $voly = $this->voly->obtenerData();
+        $baseball = $this->baseball->obtenerData();
+        $unirfutbol = $this->unirfutbol->obtenerData();
+        $unirvoly = $this->unirvoly->obtenerData();
+        $unirbaseBall = $this->unirbaseBall->obtenerData();
         
-        return Inertia::render('Componentes/Tabla', ['alumnos' => $alumnos, 'nombres' => $nombres]);
+        return Inertia::render('Componentes/Tabla', ['futbol' => $futbol, 'voly' => $voly, 'baseball' => $baseball, 'unirfutbol' => $unirfutbol, 'unirvoly' => $unirvoly, 'unirbaseBall' => $unirbaseBall]);
     }
 
     /**

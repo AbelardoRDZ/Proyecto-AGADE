@@ -28,29 +28,17 @@ function Perfil({ auth }) {
                     <Card.Body>
 
 
-                        <div style={{ display: 'inline', justifyContent: 'center', alignItems: 'center' }}>
+                        <div style={{display: 'inline', justifyContent: 'center', alignItems: 'center' }}>
 
-                            <Card>
+                            
+                            <Card style={{ width: '600px' }}>
                                 <Card.Header>Informacion Escolar</Card.Header>
                                 <Card.Body>
-                                    <Card.Title>Special title treatment</Card.Title>
-                                    <Card.Text>
-                                        With supporting text below as a natural lead-in to additional content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
+                                    <Card.Title>Nombre: {auth.user.name}</Card.Title>
+                                    <Card.Title>Correo: {auth.user.email}</Card.Title>
+                                    
                                 </Card.Body>
                             </Card><br/>
-
-                            <Card>
-                                <Card.Header>Informacion Personal</Card.Header>
-                                <Card.Body>
-                                    <Card.Title>Special title treatment</Card.Title>
-                                    <Card.Text>
-                                        With supporting text below as a natural lead-in to additional content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                            </Card>
                         </div>
 
 

@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('registro_volies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('equipo_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('creador');
             $table->string('nombre');
             $table->timestamps();
         });

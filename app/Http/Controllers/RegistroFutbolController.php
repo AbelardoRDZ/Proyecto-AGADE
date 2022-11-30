@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\RegistroFutbol;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\Post;
-
 
 class RegistroFutbolController extends Controller
 {
@@ -27,12 +25,14 @@ class RegistroFutbolController extends Controller
     {
         //Validando los datos
         $validated = $request->validate([
-            'nombre' => 'required|string|max:100'
+            'nombre' => 'required|string|max:100',
+            'creador' => 'required|string|max:100'
             
         ]);
 
         $request->user()->futbol()->create($validated);
-        return redirect(route('registroFutbol.index'));
+        //return redirect(route('registroFutbol.index'));
+        return Inertia::render('Componentes/Convocatorias');
     }
 
     public function show(RegistroFutbol $registroFutbol)
@@ -47,19 +47,20 @@ class RegistroFutbolController extends Controller
 
     public function update(Request $request, RegistroFutbol $registroFutbol)
     {
-        $this->authorize('update', $registroFutbol);
+        //$this->authorize('update', $registroFutbol);
         $validated = $request->validate([
-            'nombre' => 'required|string|max:100'
+            'nombre' => 'required|string|max:100',
+            'creador' => 'required|string|max:100'
         ]);
 
         $registroFutbol->update($validated);
-        return redirect(route('registroFutbol.index'));
+        return redirect(route('Unirfutbol.index'));
     }
 
     public function destroy(RegistroFutbol $registroFutbol)
     {
-        $this->authorize('delete', $registroFutbol);
+        //$this->authorize('delete', $registroFutbol);
         $registroFutbol->delete();
-        return redirect(route('registroFutbol.index'));
+        return redirect(route('Unirfutbol.index'));
     }
 }

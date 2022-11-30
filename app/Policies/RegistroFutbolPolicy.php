@@ -27,13 +27,13 @@ class RegistroFutbolPolicy
 
     public function update(User $user, RegistroFutbol $registroFutbol)
     {
-        return $registroFutbol->user()->is($user);
+        //return $registroFutbol->user()->is($user);
     }
 
     public function delete(User $user, RegistroFutbol $registroFutbol)
     {
         //return $post->user()->is($user);
-        return $this->update($user, $registroFutbol);
+        //return $this->update($user, $registroFutbol);
     }
 
     public function restore(User $user, RegistroFutbol $registroFutbol)
