@@ -49,9 +49,9 @@ function Convocatorias({ auth }) {
                 </Card>
 
                 <Card style={{ width: '18rem', marginLeft: '0.8rem' }}>
-                    <Card.Img variant="top" src="https://media.npr.org/assets/img/2022/10/04/gettyimages-1243732454_wide-690d350f9c1742d507001ad56b963a7ed9cffd16-s1400-c100.jpg" />
+                    <Card.Img variant="top" src="https://concepto.de/wp-content/uploads/2014/10/baloncesto-1-e1551134227999-800x400.jpg" />
                     <Card.Body>
-                        <Card.Title>Torneo Baseball</Card.Title>
+                        <Card.Title>Torneo Basketball</Card.Title>
                         <Card.Text>
                             Torneo interno deportivo campus cd valles
                         </Card.Text>

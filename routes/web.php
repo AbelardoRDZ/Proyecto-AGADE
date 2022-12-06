@@ -14,8 +14,7 @@ use App\Http\Controllers\RegistroBaseballController;
 use App\Http\Controllers\UnirfutbolController;
 use App\Http\Controllers\UnirvolyController;
 use App\Http\Controllers\UnirbaseBallController;
-
-
+use App\Http\Controllers\TablaGeneralController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +26,10 @@ use App\Http\Controllers\UnirbaseBallController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('tablaGeneral', TablaGeneralController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
 
 Route::resource('jugador', JuagdorController::class)
 ->only(['index', 'store', 'update', 'destroy'])

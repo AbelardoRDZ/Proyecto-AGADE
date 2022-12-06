@@ -71,7 +71,7 @@ export default function Resultados({ futbol, voly, baseball, auth, unirfutbol, u
             </tbody>
           </Table>
 
-          <h3 style={{ textAlign: "center" }}>Equipos de Baseball</h3>
+          <h3 style={{ textAlign: "center" }}>Equipos de Basketball</h3>
           <Table striped bordered hover>
             <thead>
               <tr>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Http\Controllers\TablaGeneralController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -39,6 +40,9 @@ class User extends Authenticatable
     }
     public function jugadores(){
         return $this->hasMany(Jugador::class);
+    }
+    public function resultado_fut(){
+        return $this->hasMany(tablaGeneral::class);
     }
     
 

@@ -24,12 +24,9 @@ export default function Authenticated({ auth, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Home
                                 </NavLink>
-                                <NavLink href={route('posts.index')} active={route().current('posts.index')}>
-                                    Posts
-                                </NavLink>
                                 
                                 <NavLink href={route('tabla.index')} active={route().current('tabla.index')}>
-                                    Tabla
+                                    Tabla de Equipos
                                 </NavLink>
                                 <NavLink href={route('convocatorias.index')} active={route().current('convocatorias.index')}>
                                     Convocatorias
@@ -37,7 +34,9 @@ export default function Authenticated({ auth, header, children }) {
                                 <NavLink href={route('perfil.index')} active={route().current('perfil.index')}>
                                     Perfil
                                 </NavLink>
-                                
+                                <NavLink href={route('tablaGeneral.index')} active={route().current('tablaGeneral.index')}>
+                                    Tabla de Resultados
+                                </NavLink>
                                 
                                 
                             </div>
@@ -110,18 +109,18 @@ export default function Authenticated({ auth, header, children }) {
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Home
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('posts.index')} active={route().current('posts.index')}>
-                            Posts
-                        </ResponsiveNavLink>
                         
                         <ResponsiveNavLink href={route('tabla.index')} active={route().current('tabla.index')}>
-                            Tabla
+                            Tabla de Equipos
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('convocatorias.index')} active={route().current('convocatorias.index')}>
                             Convocatorias
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('perfil.index')} active={route().current('perfil.index')}>
                             Perfil
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('tablaGeneral.index')} active={route().current('tablaGeneral.index')}>
+                            Tabla de Resultados
                         </ResponsiveNavLink>
                         
                         
